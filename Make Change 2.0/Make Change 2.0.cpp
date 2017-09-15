@@ -16,8 +16,6 @@ int main()
 		double amountpaid;
 		double amountpaid1;
 		double change;
-		string s1 = "hi";
-		string s2 = "no";
 
 		cout << "Enter cost of Food/Drink item: ";
 		cin >> cost;
@@ -32,15 +30,9 @@ int main()
 			cout << "Add more money" << endl;
 			cin >> amountpaid1;
 			amountpaid += amountpaid1;
-			if (s1 == s2) {
-				cout << "Strings aren't equal" << endl;
-			}
-			else {
-				cout << "Strings are equal" << endl;
-			}
 
 		}
-	start: cout << "Here is your change, thank you!" << endl;
+	    cout << "Here is your change, thank you!" << endl;
 		change = amountpaid - cost;
 		int  dollar = change / 1;
 		change = change - (1 * dollar);
@@ -55,6 +47,7 @@ int main()
 
 		double modNickel = change / .05;
 		int nickel = modNickel;
+		change = change - (.05 * nickel);
 
 
 		if (dollar) {
@@ -73,6 +66,23 @@ int main()
 			cout << "Nickels = " << nickel << endl;
 		}
 
+		cout << "Would you like anything else (Y/N)?" << endl;
+		cin >> response;
+
+		if (response == 'N' || response == 'n')
+		{
+			cout << "Next Transaction" << endl;
+			purchasing = false;
+		}
+
+		else if (response == 'Y' || response == 'y')
+		{
+			cout << "Next Transaction" << endl;
+		}
+		else {
+			cout << "Invalid response, ending transaction" << endl;
+			purchasing = false;
+		}
 	}
 	return 0;
 }
